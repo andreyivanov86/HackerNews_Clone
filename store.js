@@ -28,14 +28,6 @@ function favoritesReducer(state = initialState, action) {
   }
 }
 
-// const action1 = { type: "ADD_FAVORITE", payload: {favorite: {title: 'story1', id: 1}}};
-// const action2 = { type: "ADD_FAVORITE", payload: {favorite: {title: 'story2', id: 2}}};
-// const action3 = { type: "REMOVE_FAVORITE", payload: {favorite: {title: 'story1', id: 1}}};
-
 const store = createSotore(favoritesReducer);
-// store.dispatch(action1);
-// store.dispatch(action2);
-// store.dispatch(action3);
-// console.log(store.getState());
 
 export default store;
