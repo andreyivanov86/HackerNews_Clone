@@ -1,14 +1,15 @@
 import View from "../utils/view.js";
+import checkFavorite from "../utils/check_favorite.js";
 import store from "../store.js";
 import Story from "../components/Story.js";
 
-export default async function Favorites() {
+export default function Favorites() {
   const { favorites } = store.getState();
   const hasFavorites = favorites.length > 0;
 
   View.innerHTML = `
   <div>
-    ${hasFavorites ? favorites.map(favoriteStory => Story({...favoriteStory, isFavorite: true})).join("") : "Add some Favorites"}
+    ${hasFavorites ? favorites.map(favoriteStory => Story({...favoriteStory, isFavorite: checkFavorite(favorites, favoriteStory)})).join("") : "Add some Favorites"}
   </div>`;
 
   document.querySelectorAll(".favorite")
