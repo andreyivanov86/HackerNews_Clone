@@ -24,6 +24,7 @@ export default async function Item(path) {
     <div>
       ${Story(story)}
     </div>
+    <hr/>
     <div>
       ${
         hasComments ? comments.map((comment, index) => Comment({...comment, index: index + 1})).join('') : "No comments"
